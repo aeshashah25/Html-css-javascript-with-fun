@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body style="border: 1px solid black;">
+
+
+    <div id="test1">
+
+
+    </div>
+    <div id="test"></div>
+
+    <script>
+        var d = [];
+        fetch("https://fakestoreapi.com/products")
+            .then(y => y.json())
+            .then(y => {
+
+
+                var button = "";
+                for (let i = 1; i <= Math.ceil(y.length / 4); i++) {
+                    button = button + `<a href="#" id="page1" class="abtest">${i}</a>`
+
+                }
+
+                document.getElementById("test1").innerHTML = button;
+
+                var anchor = document.querySelectorAll(".abtest");
+
+                anchor.forEach((element) => {
+
+                    element.addEventListener("click", (e) => {
+
+
+                        var start = parseInt(element.innerHTML) * 4 - 4;
+                        var end = parseInt(element.innerHTML) * 4;
+                        mydisplaydata(y, start, end);
+
+                    })
+
+                })
+
+
+
+
+
+
+                mydisplaydata(y, 0, 4)
+
+
+                d = y;
+            });
+
+        function mydisplaydata(data, start, end) {
+            var d = "<table><tr><th>id</TH><TH>title</TH><TH>price</TH><th>description</th></tr>"
+
+
+            /* for (let index = start; index <= end; index++) {
+                 d += "<tr><td>" + data[index].id + "</td><td>" + data[index].title + "</td><td>" + data[index].price + "</td><td>" + data[index].description + "</td></tr>";
+
+             }*/
+
+
+            data.slice(start, end).forEach(element => {
+                d += "<tr><td>" + element.id + "</td><td>" + element.title + "</td><td>" + element.price + "</td><td>" + element.description + "</td></tr>";
+
+
+
+            });
+
+            d += "</table>";
+            document.getElementById("test").innerHTML = d;
+
+
+        }
+    </script>
+</body>
+
+</html>

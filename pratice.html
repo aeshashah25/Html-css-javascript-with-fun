@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin-left: 20%;
+           background-color: wheat;
+
+        }
+        #a{
+            background-color: aquamarine!important;
+        }
+    </style>
+    <title>
+
+    </title>
+</head>
+
+<body style="background-color: blueviolet;">
+    <table style=" border-radius: 900px; color: brown;">
+    
+        <tr>
+            <td colspan="2" id="a">
+                <h3>FEEDBACK FORM</h3>
+            </td>
+        </tr>
+        <form action="">
+            <tr>
+                <td><label for="student name">Student name:</label></td>
+                <td><input type="text" id="name" name:></td>
+            </tr>
+            <tr>
+                <td><label for="enroll">Enrollment No:</label></td>
+                <td><input type="text" id="enroll" name:></td>
+            </tr>
+            <tr>
+                <td> <label for="dept">Select Department</label></td>
+                <td>
+                    <select name="Department" id="Department">
+                        <option value="COMPUTER">COMPUTER ENGINNERING</option>
+                        <option value="ELECTRICAL">ELECTRICAL ENGINNERING</option>
+                        <option value="MECHANICAL">MECHANICAL ENGINNERING</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> <label for="sem">Select SEMESTER</label></td>
+                <td>
+                    <select name="SEM" id="SEM">
+                        <option value="1">1 SEM</option>
+                        <option value="2">2 SEM</option>
+                        <option value="3">3 SEM</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fav sub">Choose your fav sub:</label>
+                </td>
+                <td><input type="checkbox" name=id="fav">c++</input>
+                    <input type="checkbox" name=id="fav">Java</input>
+                    <input type="checkbox" name=id="fav">Mongodb</input>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="comment" placeholder="enter your comment here" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    GENDER
+                </td>
+                <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                </td>
+            </tr>
+
+
+        </form>
+    </table>
+</body>
+
+</html>

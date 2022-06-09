@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="check">
+
+        <form>
+            <label for="username">ENTER USERNAME</label>
+            <input type="text" id="username" />
+            <label for="password">ENTER PASSWORD</label>
+            <input type="text" id="password" />
+            <input type="button" value="LOGIN" id="submit1" />
+        </form>
+
+    </div>
+
+
+    <script>
+        class form1 {
+            constructor() {
+                this.isvalidate = this.isvalidate.bind(this);
+
+
+            }
+
+
+            isvalidate() {
+
+                var username = document.getElementById("username").value;
+                var password = document.getElementById("password").value;
+
+                if (username == "admin" && password == "admin") {
+                    alert("successfully login");
+
+                } else {
+                    alert("barabar lakh");
+
+                }
+            }
+        }
+
+
+        var submit1 = new form1();
+        document.getElementById("submit1").addEventListener("click", submit1.isvalidate);
+    </script>
+    </script>
+</body>
+
+</html>

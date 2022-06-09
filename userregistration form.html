@@ -1,0 +1,155 @@
+<html>
+
+<head>
+
+
+
+
+    <script>
+        function valid() {
+            const myobject = {};
+
+            document.getElementById("fname").innerHTML = "";
+            document.getElementById("lname").innerHTML = "";
+            document.getElementById("uname").innerHTML = "";
+            //  document.getElementById("mail").innerHTML = "";
+            document.getElementById("cty").innerHTML = "";
+            document.getElementById("str").innerHTML = "";
+            document.getElementById("num").innerHTML = "";
+            document.getElementById("zip").innerHTML = "";
+
+
+            if (document.forms["myForm"]["firstname"].value == "") {
+                document.getElementById("fname").innerHTML = "First Name is required"
+                return false;
+            } else if (document.forms["myForm"]["fname"].value.length < 5) {
+                document.getElementById("fname").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["fname"].value.length > 15) {
+                document.getElementById("fname").innerHTML = "invalid max length";
+                return false;
+
+            } else if (document.forms["myForm"]["lastname"].value == "") {
+                document.getElementById("lname").innerHTML = "First Name is required"
+                return false;
+            } else if (document.forms["myForm"]["lastname"].value.length < 5) {
+                document.getElementById("lname").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["lastname"].value.length > 15) {
+                document.getElementById("lname").innerHTML = "invalid max length";
+                return false;
+
+            } else if (document.forms["myForm"]["username"].value == "") {
+                document.getElementById("uname").innerHTML = "address is required"
+                return false;
+            } else if (document.forms["myForm"]["username"].value.length < 5) {
+                document.getElementById("uname").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["username"].value.length > 15) {
+                document.getElementById("uname").innerHTML = "invalid max length";
+                return false;
+
+            }
+
+
+
+            /* if (document.forms["myForm"]["email"].value == "") {
+                 document.getElementById("mail").innerHTML = "address is required"
+                 return false;
+             } else if (document.forms["myForm"]["email"].value.length < 5) {
+                 document.getElementById("mail").innerHTML = "invalid min length";
+                 return false;
+
+             } else if (document.forms["myForm"]["email"].value.length > 15) {
+                 document.getElementById("mail").innerHTML = "invalid max length";
+                 return false;
+
+             }*/
+            else if (document.forms["myForm"]["city"].value == "") {
+                document.getElementById("cty").innerHTML = "address is required"
+                return false;
+            } else if (document.forms["myForm"]["street"].value == "") {
+                document.getElementById("str").innerHTML = "address is required"
+                return false;
+            } else if (document.forms["myForm"]["street"].value.length < 3) {
+                document.getElementById("str").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["street"].value.length > 15) {
+                document.getElementById("str").innerHTML = "invalid max length";
+                return false;
+
+            } else if (document.forms["myForm"]["number"].value == "") {
+                document.getElementById("num").innerHTML = "address is required"
+                return false;
+            } else if (document.forms["myForm"]["number"].value.length = 10) {
+                document.getElementById("num").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["number"].value.length < 10) {
+                document.getElementById("num").innerHTML = "invalid max length";
+                return false;
+
+            } else if (document.forms["myForm"]["zipcode"].value == "") {
+                document.getElementById("zip").innerHTML = "address is required"
+                return false;
+            } else if (document.forms["myForm"]["zipcode"].value.length = 6) {
+                document.getElementById("zip").innerHTML = "invalid min length";
+                return false;
+
+            } else if (document.forms["myForm"]["zipcode"].value.length < 6) {
+                document.getElementById("zip").innerHTML = "invalid max length";
+                return false;
+
+            }
+
+
+            myobject.firstname = document.forms["myForm"]["fisrtname"].value;
+            myobject.lastNAME = document.forms["myForm"]["lastname"].value;
+            myobject.username = document.forms["myForm"]["username"].value;
+            myobject.Address = document.forms["myForm"]["city"].value;
+            myobject.street = document.forms["myForm"]["street"].value;
+            myobject.number = document.forms["myForm"]["number"].value;
+            myobject.zipcode = document.forms["myForm"]["zipcode"].value;
+
+            console.table(myobject);
+            return false;
+        }
+
+        /*function checkEmail() {
+            var email = document.getElementById('mail');
+            var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!filter.test(email.value)) {
+                alert('Please provide a valid email address');
+                email.focus;
+                return false;
+            } else {
+                myobject.EMAIL = document.forms["myForm"]["email"].value;
+            }
+        }*/
+    </script>
+</head>
+
+<body>
+    <h3 style="background-color: orangered;"><b>REGISTRATION FORM</b></h3>
+    <form name="myForm" onsubmit="return valid()" method="post">
+        <label id="fname" style="color:red"></label><br>FIRSTNAME:<input type="text" name="firstname"><br>
+        <label id="lname" style="color:red"></label><br>LASTNAME:<input type="text" name="lastname"><br>
+        <label id="uname" style="color:red"></label><br>USERNAME:<input type="text" name="username"><br>
+        <!--<label id="mail" style="color:red"></label><br>EMAIL:<input type="email" name="email"><br>-->
+        <label id="cty" style="color:red"></label>ADDRESS:<select name="city">
+                <option value="VADODARA">VADODARA</option>
+                <option value="AMDAVAD">AMDAVAD</option>
+                <option value="SURAT">SURAT</option>
+            </select><br>
+        <label id="str" style="color:red"></label><br>STREET:<input type="text" name="street"><br>
+        <label id="num" style="color:red"></label><br>NUMBER:<input type="number" name="number"><br>
+        <label id="zip" style="color:red"></label><br>ZIPCODE:<input type="number" name="zipcode"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

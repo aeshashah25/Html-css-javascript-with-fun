@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #container {
+        width: 1000px;
+        height: 1000px;
+        position: relative;
+    }
+    
+    #animate {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+    }
+</style>
+
+<body style="        background-repeat: no-repeat;    height: 1000px; width: 10000px;
+background-image: url(  https://img.freepik.com/free-photo/empty-highway-asphalt-road-beautiful-sky_51195-3950.jpg?size=626&ext=jpg&ga=GA1.1.1357644806.1644451200>
+);">
+
+    <p><button onclick="myMove()">Click Me</button></p>
+
+    <div id="container">
+
+        <div id="animate">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGuNeu8g5ibViqwlfqV6SSONloETRTYI3XAw&usqp=CAU" />
+        </div>
+    </div>
+
+    <script>
+        function myMove() {
+            let id = null;
+            const elem = document.getElementById("animate");
+            let pos = 0;
+            clearInterval(id);
+            id = setInterval(frame, 5);
+
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.right = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

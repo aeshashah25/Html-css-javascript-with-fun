@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body style="border: 1px solid black;">
+
+    <div id="test"></div>
+    <script>
+        var d = [];
+
+        fetch("https://jsonplaceholder.typicode.com/photos")
+            .then(y => y.json())
+            .then(y => {
+                mydisplaydata(y)
+                d = y;
+
+            });
+
+        function mydisplaydata(data) {
+            var d = "<table><tr><th>albumId</TH><TH>id</TH><TH>title</TH><th >url</th><th>thumbnailUrl</th></tr>"
+
+
+            data.forEach(element => {
+                d += "<tr><td>" + element.albumId + "</td><td>" + element.id + "</td><td>" + element.title + "</td><td><img src=" + element.url + "</td><td>" + element.thumbnailUrl + "</img></td></tr>";
+
+
+
+            });
+
+
+
+
+
+            d += "</table>";
+            document.getElementById("test").innerHTML = d;
+        }
+    </script>
+</body>
+
+</html>

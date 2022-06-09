@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <table id="myTable">
+        <tr>
+            <td>firstname</td>
+            <td>lastnaem</td>
+        </tr>
+        <tr>
+            <td>aesha</td>
+            <td>shah</td>
+        </tr>
+    </table>
+
+    <p>Click the button to remove the first row in the table.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTable");
+            x.deleteRow(0);
+        }
+    </script>
+
+</body>
+
+</html>

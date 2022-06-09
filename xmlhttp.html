@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="user"></div>
+    <script>
+        function myDisplayer(mydata) {
+            var mydata = JSON.parse(mydata);
+            var d = "<table><tr><th>user</TH><TH>id</TH><TH>title</TH><th>completed</th></tr>"
+            mydata.forEach(element => {
+                d += "<tr><td>" + element.user + "</td><td>" + element.id + "</td><td>" + element.title + "</td><td>" + element.completed + "</td></tr>";
+
+            });
+            d += "</table>";
+
+            document.getElementById("user").innerHTML = d;
+
+
+        }
+
+        let myPromise = new Promise(function(myResolve, myReject) {
+            let req = new XMLHttpRequest();
+            req.open('GET', "https://jsonplaceholder.typicode.com/todos");
+            req.onload = function() {
+                if (req.status == 200) {
+                    myResolve(req.responseText);
+                } else {
+                    myReject("File not Found");
+                }
+            };
+            req.send();
+        });
+
+
+
+
+
+
+        myPromise.then(
+            function(value) {
+                myDisplayer(value);
+            },
+            function(error) {
+                myDisplayer(error);
+            }
+        );
+    </script>
+</body>
+
+</html>

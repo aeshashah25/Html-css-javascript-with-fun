@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="apitest"></div>
+    <script>
+        var d = [];
+        fetch("https://fakestoreapi.com/users")
+            .then(a => a.json())
+            .then(a => {
+                data(a)
+                d = a;
+
+            });
+
+        function data(b) {
+            var d = "<table><TR><th>id</TH><TH>NAME</TH><TH>USERNAME</TH><th>PASSWORD</th><th>ADDRESS</TH></tr>"
+
+
+            b.forEach(element => {
+                d += "<tr><td>" + element.id + "</td><td>" + element.name.firstname + " " + element.name.lastname + "</td><td>" + element.username + "</td><td>" + element.password +
+                    "</td><td>" + element.address.city + "" + element.address.street + "</td></tr>";
+
+
+            });
+            d += "</table>";
+            document.getElementById("apitest").innerHTML = d;
+        }
+    </script>
+</body>
+
+</html>

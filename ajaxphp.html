@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>The XMLHttpRequest Object</h2>
+    <h3>Start typing a name in the input field below:</h3>
+
+    <p>Suggestions: <span id="txtHint"></span></p>
+    <p>First name: <input type="text" id="txt1" onchange="showHint(this.value)"></p>
+
+    <script>
+        function showHint(str) {
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "notfound";
+                return;
+
+
+
+            }
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+
+                var data = JSON.parse(this.responseText);
+
+                var html = `<table><tr><td>${data.name}</td><td>${data.company}</td><td>${data.bio}</td></tr></table>`
+
+                document.getElementById("txtHint").innerHTML =
+                    html;
+            }
+            xhttp.open("GET", "https://api.github.com/users/" + str);
+            xhttp.send();
+        }
+    </script>
+
+</body>
+
+</html>

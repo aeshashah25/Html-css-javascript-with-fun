@@ -1,0 +1,47 @@
+<HTML>
+
+<head>
+
+
+
+</head>
+
+<body>
+    <script>
+        let mydata = [
+
+            {
+                firstName: "aesha ",
+                lastName: "shah",
+                city: "Vadodara"
+            }, {
+                firstName: "ayesha",
+                lastName: "shah",
+                city: "Vadodara"
+            }, {
+                firstName: "aisha",
+                lastName: "shah",
+                city: "Vadodara"
+            },
+
+
+        ]
+        let mytable = '<table> <tr> <td>';
+        for (let i = 0; i < mydata.length; i++) {
+            mytable += "<tr><td>" + mydata[i].firstName + "</td></mydata> </tr>";
+            mytable += "<tr><td>" + mydata[i].lastName + "</td> </mydata> </tr>";
+            mytable += "<tr><td>" + mydata[i].City + "</td> </mydata> </tr>";
+
+
+        }
+        document.getElementById("mytab").innerHTML = mytable;
+    </script>
+    <table id="mytab">
+        <tr>
+            <td>firstName</td>
+            <td>lastName</td>
+        </tr>
+    </table>
+</body>
+
+</HTML>

@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body style="border: 1px solid black;">
+
+    <input type="text" value="" id="search" />
+    <input type="button" value="SEARCH" id="final" onclick="myChange()" />
+
+    <div id="test"></div>
+    <script>
+        var d = [];
+        fetch("https://fakestoreapi.com/products")
+            .then(y => y.json())
+            .then(y => {
+                mydisplaydata(y)
+                d = y;
+            });
+
+        function mydisplaydata(data) {
+            var d = "<table><tr><th>id</TH><TH>title</TH><TH>price</TH><th>description</th></tr>"
+
+
+            data.forEach(element => {
+                d += "<tr><td>" + element.id + "</td><td>" + element.title + "</td><td>" + element.price + "</td><td>" + element.description + "</td></tr>";
+
+
+
+            });
+
+
+
+
+            d += "</table>";
+            document.getElementById("test").innerHTML = d;
+        }
+
+        function myChange() {
+
+            var myFilterData = d.filter(function(value) {
+
+                return value.title.indexOf(document.getElementById("search").value) >= 0;
+
+            });
+
+            console.log(myFilterData);
+
+
+            mydisplaydata(myFilterData);
+
+
+        }
+    </script>
+</body>
+
+</html>

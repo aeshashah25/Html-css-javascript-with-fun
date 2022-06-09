@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="post"></div>
+    <div id="user"></div>
+
+    <script>
+        function myDisaplyInfoForUser(data) {
+            var d = "<table><tr><th>id</TH><TH>name</TH><TH>username</TH><th>email</th></tr>"
+            data.forEach(element => {
+                d += "<tr><td>" + element.id + "</td><td>" + element.name + "</td><td>" + element.username + "</td><td>" + element.email + "</td></tr>";
+
+            });
+            d += "</table>";
+
+            document.getElementById("user").innerHTML = d;
+
+        }
+
+        function myDisaplyInfoForPost(data) {
+            var a = "<table><tr><th>userId</TH><TH>id</TH><TH>title</TH><th>body</th></tr>"
+            data.forEach(element => {
+                a += "<tr><td>" + element.userId + "</td><td>" + element.id + "</td><td>" + element.title + "</td><td>" + element.body + "</td></tr>";
+            });
+            a += "</table>";
+            document.getElementById("post").innerHTML = a;
+
+        }
+
+
+        function myfechInfo(url, dataCallback) {
+            fetch(url)
+
+            .then(p => p.json())
+                .then(y => dataCallback(y))
+
+        }
+
+
+        myfechInfo("https://jsonplaceholder.typicode.com/users", myDisaplyInfoForUser);
+        myfechInfo("https://jsonplaceholder.typicode.com/posts", myDisaplyInfoForPost);
+    </script>
+
+
+
+</body>
+
+
+</html>
