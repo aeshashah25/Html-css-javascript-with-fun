@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <style> 
+    table,th,td{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    </style>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <table style="margin-left: 27%;">
+        <tr>
+            <td>
+                <form>
+                    <label for="sname">STUDENT NAME:</label><br>
+                </form>
+            </td>
+            <td>
+                <input type="text" id="fname" name="fname" placeholder="NAME">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <form>
+                    <label for="enno">ENROLLMENT NUMBER:</label><br>
+                </form>
+            </td>
+            <td>
+                <input type="number" id="enno" name="enroll" placeholder="ENROLLMENT NUMBER">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="DEPARTMENT">DEPARTMENT:</label>
+        
+        
+            </td>
+            <td>
+                <select name="DEPARTMENT" id="DEPT">
+                    <option value="COMPUTER">COMPUTER</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="ELECTRICAL">ELECTRICAL</option>
+                </select>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="SEM">Choose a SEMESTER:</label>
+        
+        
+            </td>
+            <td>
+                <select name="SEM" id="SEM">
+                    <option value="1ST">1ST</option>
+                    <option value="2ND">2ND</option>
+                    <option value="3RD">3RD</option>
+                    <option value="4RD">4TH</option>
+                    <option value="5RD">5TH</option>
+                    <option value="6TH">6TH</option>
+                </select>
+            </td>
+        </tr>
+        <TR>
+            <TD>
+                <label for="Choose">CHOOSE YOUR FAVORITE SUBJECT:</label>
+            </TD>
+            <TD>
+                <form action="/action_page.php">
+                    <input type="checkbox" id="Choose" name="Choose" value="C++">
+                    <label for="C++"> C++</label>
+                    <input type="checkbox" id="Choose" name="Choose" value="JAVA">
+                    <label for="JAVA"> JAVA</label>
+                    <input type="checkbox" id="Choose" name="Choose" value="HTML">
+                    <label for="HTML"> HTML</label>
+        
+                </form>
+            </TD>
+        </TR>
+        <tr>
+            <td colspan="2">
+        
+                <textarea name="message" rows="10" cols="30">
+        
+        </textarea>
+        
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                GENDER
+            </td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="email">Enter your email:</label>
+        
+            </td>
+            <td><input type="email" id="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>
+                <center>
+                <button> SUBMIT</button>
+            </center>
+            </td>
+        
+            <td>
+                <button>RESET</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
